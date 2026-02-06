@@ -1,0 +1,60 @@
+@use "variables" as *;
+@use "common" as *;
+@use "modules" as *;
+@use "mixin" as *;
+
+// フッター
+.footer {
+    padding-top: 64px;
+    background-color: $base-brown;
+
+    &-container {
+        width: fit-content;
+        padding-bottom: 32px;
+        margin: 0 auto;
+        text-align: center;
+
+        @include mq(sp){
+            width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    &__logo {
+        height: 48px;
+    }
+
+    .nav {
+        margin-top: 32px;
+        margin-bottom: 24px;
+
+        @include mq(sp){
+            margin: 48px 0;
+        }
+    }
+
+    .sns {
+        justify-content: center;
+        column-gap: 8px;
+        margin-bottom: 64px;
+
+        @include mq(sp){
+            margin-bottom: 48px;
+        }
+    }
+}
+
+// コピーライト
+.copyright {
+    display: block;
+    padding-top: 32px;
+    border-top: 1px solid $text-brown;
+    color: $text-brown;
+    font-size: 16px;
+    line-height: 1;
+
+    @include mq(sp){
+        font-size: 14px;
+    }
+}

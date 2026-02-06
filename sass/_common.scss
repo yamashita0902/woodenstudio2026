@@ -1,0 +1,88 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: $serif, $serif-jp, $sans-jp, serif, sans-serif;
+}
+
+// セクション
+.section {
+    &-container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    &-headline {
+        margin-bottom: 32px;
+        line-height: 1;
+        letter-spacing: 0.01em;
+
+        @include mq(sp){
+            margin-bottom: 24px;
+        }
+
+        &--black {
+            color: $text-black;
+        }
+
+        &--brown {
+            color: $text-brown;
+        }
+
+        &--white {
+            color: $text-white;
+        }
+
+        &__en {
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500;
+
+            @include mq(sp){
+                font-size: 12px;
+            }
+        }
+
+        &__ja {
+            font-size: 40px;
+            font-weight: 500;
+
+            @include mq(sp){
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__lead {
+        margin-bottom: 32px;
+        line-height: 1;
+        text-align: center;
+
+        @include mq(sp){
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        &--black {
+            color: $text-black;
+        }
+
+        &--white {
+            color: $text-white;
+        }
+    }
+}
+
+// 改行の表示切り替え
+.pc-none{
+    display: none;
+    @include mq(sp){
+        display: block;
+    }
+}
